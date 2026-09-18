@@ -1,0 +1,23 @@
+# Resume CMS v1.0
+# Source Markdown -> Generated HTML mapping
+
+resumes:
+  06AB:
+    source: resumes/06AB.md
+    output: research-consulting
+
+  06C2:
+    source: resumes/06C2.md
+    output: network-planning
+
+  06D:
+    source: resumes/06D.md
+    output: product-planning
+
+  06F:
+    source: resumes/06F.md
+    output: ai-deployment-strategy
+
+  06G:
+    source: resumes/06G.md
+    output: presales-solution-consulting
