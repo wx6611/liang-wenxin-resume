@@ -1,4 +1,4 @@
-name: Build Resume Pages
+name: Validate Resume Build
 
 on:
   push:
@@ -17,21 +17,4 @@ jobs:
           python-version: '3.x'
 
       - name: Build resumes
-        run: |
-          python scripts/build_resume.py
-
-      - name: Deploy Pages
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: generated
-
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-    steps:
-      - uses: actions/deploy-pages@v4
+        run: python scripts/build_resume.py
