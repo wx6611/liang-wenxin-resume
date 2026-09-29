@@ -1,8 +1,14 @@
 from pathlib import Path
+import html
 import re
 
 
 def normalize(text):
+    text = html.unescape(text)
+    text = re.sub(r'<[^>]+>', '', text)
+    text = re.sub(r'(?m)^\s*#{1,6}\s+', '', text)
+    text = re.sub(r'\*\*(.*?)\*\*', r'\1', text)
+    text = re.sub(r'(?m)^\s*-\s+', '', text)
     return re.sub(r'\s+', '', text)
 
 
@@ -14,7 +20,7 @@ def main():
             failed.append(f'{md.stem}: missing html')
             continue
         source = normalize(md.read_text(encoding='utf-8'))
-        target = normalize(re.sub('<[^>]+>', '', html_file.read_text(encoding='utf-8')))
+        target = normalize(html_file.read_text(encoding='utf-8'))
         if source not in target:
             failed.append(f'{md.stem}: mismatch')
     if failed:
