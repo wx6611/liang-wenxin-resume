@@ -4,7 +4,7 @@
 resumes:
   06AB:
     source: resumes/06AB.md
-    output: research-consulting
+    output: industry-business-solutions
 
   06C2:
     source: resumes/06C2.md
