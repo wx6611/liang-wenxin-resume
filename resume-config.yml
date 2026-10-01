@@ -2,6 +2,10 @@
 # Source Markdown -> Generated HTML mapping
 
 resumes:
+  06A:
+    source: resumes/06A.md
+    output: strategy-industry-research
+
   06AB:
     source: resumes/06AB.md
     output: industry-business-solutions
